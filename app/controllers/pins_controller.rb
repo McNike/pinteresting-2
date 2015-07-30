@@ -40,6 +40,11 @@ class PinsController < ApplicationController
   end
 
   private
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def pin_params
+      params.require(:pin).permit(:description, :image)
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_pin
       @pin = Pin.find(params[:id])
@@ -48,10 +53,5 @@ class PinsController < ApplicationController
     def correct_user
       @pin = current_user.pins.find_by(id: params[:id])
       redirect_to pins_path, notice: "Not authorized to edit this pin" if @pin.nil?
-    end
-
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def pin_params
-      params.require(:pin).permit(:description, :image)
     end
 end
