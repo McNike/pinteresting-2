@@ -17,6 +17,7 @@ gem 'tzinfo-data'
 
 group :development, :test do
 	gem 'sqlite3'
+	gem 'aws-sdk','<2.0'
 end
 
 group :production do
