@@ -12,12 +12,12 @@ gem 'bootstrap-sass'
 gem 'devise', '~> 3.1.0.rc2'
 # gem 'paperclip', github: 'thoughtbot/paperclip'
 gem 'paperclip', '3.5.1'
-gem 'aws-sdk','<2.0'
+# gem 'aws-sdk','<2.0'
 gem 'tzinfo-data'
 
 group :development, :test do
 	gem 'sqlite3'
-	gem 'aws-sdk','<2.0'
+	gem 'aws-sdk','~> 1.64.0'
 end
 
 group :production do
