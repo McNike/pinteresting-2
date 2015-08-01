@@ -23,6 +23,7 @@ end
 group :production do
 	gem 'pg'
 	gem 'rails_12factor'
+	gem 'aws-sdk','~> 1.64.0'
 end
 
 group :doc do 
